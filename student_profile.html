@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School - Student Portal</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Custom Styles for Application Aesthetic */
+        body { 
+            background-color: #f8f9fa; /* Light background */
+        }
+        
+        .navbar {
+            background-color: #007bff; /* Primary Blue Header */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white !important;
+        }
+
+        .main-content {
+            padding-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Profile Layout */
+        #studentProfile .profile-card {
+            background-color: #fff8e1; /* Light Orange/Peach for Profile */
+            border-left: 5px solid #ff9800; /* Accent Color */
+        }
+
+        .student-image {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; /* Circle Shape */
+            background-color: #ccc; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border: 3px solid #007bff;
+            flex-shrink: 0; 
+        }
+
+        /* TimeTable Styling */
+        #timeTable .table-header {
+            background-color: #2ecc71; /* Green accent for timetable */
+            color: white;
+        }
+        
+        /* Ensures responsiveness on small screens */
+        @media (max-width: 576px) {
+            .profile-details {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .student-image {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid main-content">
+                <span class="navbar-brand logo">
+                    Spring Flowers School
+                </span>
+                
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="javascript:showView('welcome')">Welcome</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="javascript:showView('studentProfile')">Student Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="javascript:showView('timeTable')">Time Table</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <section id="welcome" class="p-5 my-3 bg-white rounded shadow-sm text-center">
+            <h1 class="text-primary mb-3">Welcome to GLearning!</h1>
+            <p class="lead">We are happy to have you at Spring Flowers School. Use the menu above to see your details and schedule.</p>
+        </section>
+        
+        <section id="studentProfile" class="p-4 my-3 rounded shadow-sm profile-card" style="display: none;">
+            <h2 class="text-warning border-bottom pb-2 mb-4">Your Profile Information</h2>
+            
+            <div class="d-flex align-items-start profile-details gap-4"> 
+                
+                <div class="student-image mx-auto mx-md-0">
+                    <span class="text-secondary">Image Placeholder</span>
+                </div>
+                
+                <div class="info-block flex-grow-1">
+                    <p><strong>Name:</strong> Aniket Pandey</p>
+                    <p><strong>Student ID:</strong> SF/2025/101</p>
+                    <p><strong>Class:</strong> 10th Standard, Section A</p>
+                    <p><strong>Email:</strong> aniket.p@springflowers.edu</p>
+                    <p class="mt-4 fw-bold text-warning">(GLearning)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeTable" class="p-4 my-3 bg-white rounded shadow-sm" style="display: none;">
+            <h2 class="text-success border-bottom pb-2 mb-4">Daily Time Table</h2>
+            
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-header">
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>9:00 - 10:00</td>
+                            <td>Mathematics</td>
+                            <td>Science</td>
+                            <td>English</td>
+                            <td>Social Science</td>
+                            <td>Computer Lab</td>
+                        </tr>
+                        <tr>
+                            <td>10:00 - 11:00</td>
+                            <td>Hindi</td>
+                            <td>Mathematics</td>
+                            <td>Science</td>
+                            <td>English</td>
+                            <td>Mathematics</td>
+                        </tr>
+                        <tr>
+                            <td>11:00 - 11:30</td>
+                            <td colspan="5" class="text-center bg-light">Short Break</td>
+                        </tr>
+                        <tr>
+                            <td>11:30 - 12:30</td>
+                            <td>Science Lab</td>
+                            <td>Hindi</td>
+                            <td>P.E.</td>
+                            <td>Mathematics</td>
+                            <td>Art Class</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        /**
+         * Function to switch the visible section based on menu click.
+         * @param {string} viewId - 'welcome', 'studentProfile', or 'timeTable'
+         */
+        function showView(viewId) {
+            // Hide all views first
+            document.getElementById('welcome').style.display = 'none';
+            document.getElementById('studentProfile').style.display = 'none';
+            document.getElementById('timeTable').style.display = 'none';
+            
+            // Show the requested view
+            const target = document.getElementById(viewId);
+            if (target) {
+                target.style.display = 'block';
+            }
+        }
+
+        // Initialize to show the welcome page on initial load
+        document.addEventListener('DOMContentLoaded', () => {
+             // Ensures only the welcome page is visible at start
+             showView('welcome'); 
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
